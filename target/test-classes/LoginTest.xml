@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="tests" thread-count="5" name="Suit" >
+    <test name="TestChrome">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testscases.LoginTest" />
+        </classes>
+    </test>
+<!--
+<test name="TestFirefox">
+        <parameter name="browserName" value="ff"/>
+        <classes>
+            <class name="testscases.LoginTest" />
+        </classes>
+    </test>
+-->
+</suite> <!-- Suite -->
