@@ -20,6 +20,12 @@ public class LoginPage extends BasePage {
     @FindBy(how = How.CSS, using = "#login-button")
     public WebElement btn_Login;
 
+    @FindBy(how = How.CSS, using ="h3[data-test='error']")
+    public WebElement box_error;
+
+    @FindBy(how = How.CSS, using =".error-button")
+    public WebElement btn_cancel_error;
+
     public void enter_Username(String username){
         txt_Username.clear();
         txt_Username.sendKeys(username);

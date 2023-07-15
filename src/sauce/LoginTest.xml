@@ -6,7 +6,7 @@
             <class name="testscases.LoginTest" />
         </classes>
     </test>
-<!--
+<!-- (Add test run with firefox)
 <test name="TestFirefox">
         <parameter name="browserName" value="ff"/>
         <classes>
