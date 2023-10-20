@@ -10,10 +10,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
+import pages.HomePage;
 import pages.LoginPage;
 
 import java.io.File;
@@ -26,6 +25,7 @@ import java.util.Calendar;
 public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
+    protected HomePage homePage;
     protected WebDriverWait shortWait;
     protected WebDriverWait normalWait;
     protected WebDriverWait longWait;
@@ -39,23 +39,27 @@ public class BaseTest {
         if (browserName.equalsIgnoreCase("ff")) {
             driver = new FirefoxDriver();
         } else {
-            /* (Add Options to run with Chrome (headless)) */
+            /* (Add Options to run with Chrome (headless))
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("disable-gpu");
             driver = new ChromeDriver(chromeOptions);
-            //driver = new ChromeDriver();
+            */
+            driver = new ChromeDriver();
         }
 
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
 
         loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
 
         shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
         normalWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         longWait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        loginPage.action_LoginWithCorrectUser();
     }
 
     @AfterMethod
@@ -67,6 +71,6 @@ public class BaseTest {
             File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(srcFile, new File("src\\screenshot\\screenshot-" + timeStamp + ".png"));
         }
-        driver.quit();
+        //driver.quit();
     }
 }

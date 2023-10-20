@@ -42,4 +42,10 @@ public class LoginPage extends BasePage {
         enter_Password(password);
         clickOn_btn_Login();
     }
+
+    public void action_LoginWithCorrectUser(){
+        enter_Username("standard_user");
+        enter_Password("secret_sauce");
+        clickOn_btn_Login();
+    }
 }

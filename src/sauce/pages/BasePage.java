@@ -12,3 +12,4 @@ public class BasePage {
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }
 }
+
