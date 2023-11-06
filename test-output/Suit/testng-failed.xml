@@ -6,13 +6,9 @@
     <classes>
       <class name="testscases.LoginTest">
         <methods>
-          <include name="loginUnsuccessfullyWithEmptyUser"/>
-          <include name="loginUnsuccessfullyWithWrongPassword"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="loginSuccessfullyWithStandardUser"/>
-          <include name="loginUnsuccessfullyWithEmptyPassword"/>
-          <include name="loginUnsuccessfullyWithWrongUser"/>
         </methods>
       </class> <!-- testscases.LoginTest -->
     </classes>

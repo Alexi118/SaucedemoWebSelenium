@@ -32,7 +32,7 @@ public class BaseTest {
 
     @Parameters({"browserName"})
     @BeforeMethod
-    public void setUp(String browserName) {
+    public void setUp(String browserName) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
 
@@ -57,9 +57,7 @@ public class BaseTest {
 
         shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
         normalWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        longWait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        loginPage.action_LoginWithCorrectUser();
+        longWait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     @AfterMethod

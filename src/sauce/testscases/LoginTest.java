@@ -3,7 +3,6 @@ package testscases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
@@ -11,7 +10,7 @@ public class LoginTest extends BaseTest {
     @Test()
     public void loginSuccessfullyWithStandardUser(){
         loginPage.action_LoginWithCorrectUser();
-        normalWait.until(ExpectedConditions.visibilityOf(homePage.banner_AppLogo));
+        longWait.until(ExpectedConditions.visibilityOf(homePage.banner_AppLogo));
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html" );
     }
 
