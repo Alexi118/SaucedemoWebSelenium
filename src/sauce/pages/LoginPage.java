@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import utils.Constants;
+
 public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver){
@@ -44,8 +46,8 @@ public class LoginPage extends BasePage {
     }
 
     public void action_LoginWithCorrectUser(){
-        enter_Username("standard_user");
-        enter_Password("secret_sauce");
+        enter_Username(Constants.Admin_acc);
+        enter_Password(Constants.Admin_pass);
         clickOn_btn_Login();
     }
 }

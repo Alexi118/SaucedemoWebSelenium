@@ -14,7 +14,7 @@ public class ExcelUtils {
 
 	public ExcelUtils(String Path, String SheetName) {
 		try {
-			FileInputStream file = new FileInputStream("D:\\IntelliJ Projects\\SaucedemoWebSelenium\\data\\datatest.xlsx");
+			FileInputStream file = new FileInputStream(Path);
 			System.out.println(file);
 			workbook = new XSSFWorkbook(file);
 			sheet = workbook.getSheet(SheetName);

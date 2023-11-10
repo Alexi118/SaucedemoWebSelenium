@@ -22,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 
+import utils.Constants;
+
 public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
@@ -50,14 +52,14 @@ public class BaseTest {
         }
 
         driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
+        driver.get(Constants.baseURL);
 
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
 
-        shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        normalWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        longWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        shortWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Short));
+        normalWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Normal));
+        longWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Long));
     }
 
     @AfterMethod
@@ -69,6 +71,6 @@ public class BaseTest {
             File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(srcFile, new File("src\\screenshot\\screenshot-" + timeStamp + ".png"));
         }
-        //driver.quit();
+        driver.quit();
     }
 }
