@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.Select;
+
+import utils.Common;
 
 public class HomePage extends BasePage {
+    Common common = new Common();
     public HomePage(WebDriver driver){
             super(driver);
     }
@@ -20,6 +22,6 @@ public class HomePage extends BasePage {
     public WebElement filter_box;
 
     public void action_select_dropdown_filter_box(String dropdownOption){
-        action_select_dropdown(dropdownOption,filter_box);
+        common.action_select_dropdown(dropdownOption,filter_box);
     };
 }

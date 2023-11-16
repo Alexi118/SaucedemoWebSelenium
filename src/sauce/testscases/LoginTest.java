@@ -17,40 +17,60 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html" );
     }
     @DataProvider(name = "LoginSuccessful")
-    public Object[][] getLoginSuccessfulData() throws Exception {
+    public Object[][] loginSuccessfullyWithStandardUserData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginSuccessful);
         return excel.getTableArray(2);
     }
-//
-//    @Test()
-//    public void loginUnsuccessfullyWithEmptyUser(){
-//        loginPage.action_Login("","secret_sauce");
-//        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username is required");
-//        loginPage.btn_cancel_error.click();
-//        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
-//    }
-//
-//    @Test()
-//    public void loginUnsuccessfullyWithEmptyPassword(){
-//        loginPage.action_Login("standard_user","");
-//        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Password is required");
-//        loginPage.btn_cancel_error.click();
-//        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
-//    }
-//
-//    @Test()
-//    public void loginUnsuccessfullyWithWrongUser(){
-//        loginPage.action_Login("standard","secret_sauce");
-//        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username and password do not match any user in this service");
-//        loginPage.btn_cancel_error.click();
-//        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
-//    }
-//
-//    @Test()
-//    public void loginUnsuccessfullyWithWrongPassword(){
-//        loginPage.action_Login("standard","secret_sauce123");
-//        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username and password do not match any user in this service");
-//        loginPage.btn_cancel_error.click();
-//        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
-//    }
+
+    @Test(dataProvider = "LoginUnsuccessful1")
+    public void loginUnsuccessfullyWithEmptyUser(String username,String password){
+        loginPage.action_Login(username,password);
+        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username is required");
+        loginPage.btn_cancel_error.click();
+        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
+    }
+    @DataProvider(name = "LoginUnsuccessful1")
+    public Object[][] loginUnsuccessfullyWithEmptyUserData() throws Exception {
+        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
+        return excel.getTableArray(2);
+    }
+
+    @Test(dataProvider = "LoginUnsuccessful2")
+    public void loginUnsuccessfullyWithEmptyPassword(String username,String password){
+        loginPage.action_Login(username,password);
+        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Password is required");
+        loginPage.btn_cancel_error.click();
+        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
+    }
+    @DataProvider(name = "LoginUnsuccessful2")
+    public Object[][] loginUnsuccessfullyWithEmptyPasswordData() throws Exception {
+        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
+        return excel.getTableArray(2);
+    }
+
+    @Test(dataProvider = "LoginUnsuccessful3")
+    public void loginUnsuccessfullyWithWrongUser(String username,String password){
+        loginPage.action_Login(username,password);
+        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username and password do not match any user in this service");
+        loginPage.btn_cancel_error.click();
+        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
+    }
+    @DataProvider(name = "LoginUnsuccessful3")
+    public Object[][] loginUnsuccessfullyWithWrongUserData() throws Exception {
+        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
+        return excel.getTableArray(2);
+    }
+
+    @Test(dataProvider = "LoginUnsuccessful4")
+    public void loginUnsuccessfullyWithWrongPassword(String username,String password){
+        loginPage.action_Login(username,password);
+        Assert.assertEquals(loginPage.box_error.getText(),"Epic sadface: Username and password do not match any user in this service");
+        loginPage.btn_cancel_error.click();
+        normalWait.until(ExpectedConditions.invisibilityOf(loginPage.box_error));
+    }
+    @DataProvider(name = "LoginUnsuccessful4")
+    public Object[][] loginUnsuccessfullyWithWrongPasswordData() throws Exception {
+        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
+        return excel.getTableArray(2);
+    }
 }
