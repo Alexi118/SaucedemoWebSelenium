@@ -15,6 +15,6 @@ public class HomePageComponentTest extends BaseTest {
     @Test
     public void homePageFilterSuccessfully(){
         loginPage.action_LoginWithCorrectUser();
-        homePage.action_selectFilter("lohi");
+        homePage.action_select_dropdown_filter_box("lohi");
     }
 }

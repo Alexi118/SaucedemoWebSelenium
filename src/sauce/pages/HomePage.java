@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends BasePage {
@@ -20,8 +19,7 @@ public class HomePage extends BasePage {
     @FindBy(how = How.CSS, using =".product_sort_container")
     public WebElement filter_box;
 
-    public void action_selectFilter(String option){
-        Select select_filter_box = new Select(filter_box);
-        select_filter_box.selectByValue(option);
-    }
+    public void action_select_dropdown_filter_box(String dropdownOption){
+        action_select_dropdown(dropdownOption,filter_box);
+    };
 }

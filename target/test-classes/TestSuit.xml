@@ -4,7 +4,7 @@
         <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="testscases.LoginTest" />
-            <class name="testscases.HomePageComponentTest" />
+<!--            <class name="testscases.HomePageComponentTest" />-->
         </classes>
     </test>
 <!-- (Add test run with firefox)
@@ -12,6 +12,7 @@
         <parameter name="browserName" value="ff"/>
         <classes>
             <class name="testscases.LoginTest" />
+            <class name="testscases.HomePageComponentTest" />
         </classes>
     </test>
 -->
