@@ -112,7 +112,41 @@ public class ExcelUtils {
 
 	}
 
-	public Object[][] getTableArray(int column)
+	public Object[][] getTableByColumn(int column)
+			throws Exception {
+
+		String[][] tabArray = null;
+
+		try {
+			int startRow = 1;
+			int startCol = 0;
+			int ci, cj;
+			int totalRows = ExcelWSheet.getLastRowNum();
+			// you can write a function as well to get Column count
+			int totalCols = column;
+			tabArray = new String[totalRows][totalCols];
+			ci = 0;
+			for (int i = startRow; i <= totalRows; i++, ci++) {
+				cj = 0;
+				for (int j = startCol; j < totalCols; j++, cj++) {
+					tabArray[ci][cj] = getCellData(i, j);
+					System.out.println(tabArray[ci][cj]);
+				}
+			}
+		}
+		catch (FileNotFoundException e) {
+//			LogUtil.error("Could not read the Excel sheet");
+			//System.out.println("Could not read the Excel sheet");
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+//			LogUtil.error("Could not read the Excel sheet");
+			//System.out.println("Could not read the Excel sheet");
+			e.printStackTrace();
+		}
+		return (tabArray);
+	}
+	public Object[][] getTableByRow(int column)
 			throws Exception {
 
 		String[][] tabArray = null;

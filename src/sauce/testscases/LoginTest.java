@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "LoginUnsuccessful1")
     public Object[][] loginUnsuccessfullyWithEmptyUserData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
-        return excel.getTableArray(2);
+        return excel.getTableByColumn(2);
     }
 
 //    @Test(dataProvider = "LoginUnsuccessful2")
