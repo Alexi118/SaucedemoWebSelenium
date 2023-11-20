@@ -3,8 +3,8 @@
     <test name="TestChrome">
         <parameter name="browserName" value="chrome"/>
         <classes>
-<!--            <class name="testscases.LoginTest" />-->
-            <class name="testscases.HomePageComponentTest" />
+            <class name="testscases.LoginTest" />
+<!--            <class name="testscases.HomePageComponentTest" />-->
         </classes>
     </test>
 <!-- (Add test run with firefox) -->
