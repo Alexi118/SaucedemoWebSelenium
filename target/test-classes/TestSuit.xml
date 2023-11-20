@@ -3,17 +3,16 @@
     <test name="TestChrome">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="testscases.LoginTest" />
-<!--            <class name="testscases.HomePageComponentTest" />-->
-        </classes>
-    </test>
-<!-- (Add test run with firefox)
-<test name="TestFirefox">
-        <parameter name="browserName" value="ff"/>
-        <classes>
-            <class name="testscases.LoginTest" />
+<!--            <class name="testscases.LoginTest" />-->
             <class name="testscases.HomePageComponentTest" />
         </classes>
     </test>
--->
+<!-- (Add test run with firefox) -->
+<!--<test name="TestFirefox">-->
+<!--        <parameter name="browserName" value="ff"/>-->
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="testscases.LoginTest" />&ndash;&gt;-->
+<!--            <class name="testscases.HomePageComponentTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite> <!-- Suite -->

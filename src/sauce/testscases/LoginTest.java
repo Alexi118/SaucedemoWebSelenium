@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
     public void loginSuccessfullyWithStandardUser(String username,String password){
         loginPage.action_Login(username,password);
         longWait.until(ExpectedConditions.visibilityOf(homePage.banner_AppLogo));
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html" );
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
     }
     @DataProvider(name = "LoginSuccessful")
     public Object[][] loginSuccessfullyWithStandardUserData() throws Exception {
