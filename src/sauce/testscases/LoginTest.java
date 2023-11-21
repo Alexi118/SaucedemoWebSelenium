@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "LoginSuccessful")
     public Object[][] loginSuccessfullyWithStandardUserData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginSuccessful);
-        return excel.getTableArray(2);
+        return excel.getTableByColumn(2);
     }
 
     @Test(dataProvider = "LoginUnsuccessful1")
