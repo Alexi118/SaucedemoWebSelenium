@@ -8,7 +8,6 @@ import utils.Common;
 
 
 public class HomePage extends BasePage {
-    Common common = new Common();
     public HomePage(WebDriver driver){
             super(driver);
     }

@@ -22,15 +22,14 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 
+import utils.Common;
 import utils.Constants;
 
 public class BaseTest {
     protected WebDriver driver;
+    protected Common common;
     protected LoginPage loginPage;
     protected HomePage homePage;
-    protected WebDriverWait shortWait;
-    protected WebDriverWait normalWait;
-    protected WebDriverWait longWait;
 
     @Parameters({"browserName"})
     @BeforeMethod
@@ -56,11 +55,7 @@ public class BaseTest {
 
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-
-        shortWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Short));
-        normalWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Normal));
-        longWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Long));
-        System.out.println(normalWait);
+        common = new Common(driver);
     }
 
     @AfterMethod
