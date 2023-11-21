@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 import testscases.BaseTest;
 
 public class Common extends BaseTest {
-
         public void waitForVisibilityOfElement(WebElement webElement){
                 try{
+                        System.out.println(normalWait);
                         normalWait.until(ExpectedConditions.visibilityOf(webElement));
                 }catch (NoSuchElementException e){
                         System.out.println("The element is not visible!" + webElement);

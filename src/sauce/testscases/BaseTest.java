@@ -60,6 +60,7 @@ public class BaseTest {
         shortWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Short));
         normalWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Normal));
         longWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Long));
+        System.out.println(normalWait);
     }
 
     @AfterMethod
