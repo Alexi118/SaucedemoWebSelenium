@@ -153,7 +153,7 @@ public class ExcelUtils {
 			int totalRows = row;
 			// you can write a function as well to get Column count
 			int totalCols = colunm;
-			tabArray = new String[totalRows][totalCols];
+			tabArray = new String[startRow][totalCols];
 			ci = 0;
 			for (int i = startRow; i <= totalRows; i++, ci++) {
 				cj = 0;
