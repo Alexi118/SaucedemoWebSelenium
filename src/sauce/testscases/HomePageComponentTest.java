@@ -57,4 +57,8 @@ public class HomePageComponentTest extends BaseTest {
         loginPage.action_LoginWithCorrectUser();
         common.action_select_dropdown("hilo", homePage.filter_box);
     }
+//    @Test
+//    public void footerRedirectCorrectly(){
+//
+//    }
 }

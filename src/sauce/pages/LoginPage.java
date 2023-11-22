@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
     @FindBy(how = How.CSS, using = "#login-button")
     public WebElement btn_Login;
 
-    @FindBy(how = How.CSS, using ="h3[data-test='error']")
+    @FindBy(css =".error-message-container")
     public WebElement box_error;
 
     @FindBy(how = How.CSS, using =".error-button")
