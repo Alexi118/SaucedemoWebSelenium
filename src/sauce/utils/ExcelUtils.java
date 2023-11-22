@@ -28,7 +28,6 @@ public class ExcelUtils {
 			// Access the required test data sheet
 			ExcelWBook = new XSSFWorkbook(ExcelFile);
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
-			//LogUtil.info("Excel sheet opened");
 			//System.out.println("Excel sheet opened");
 		} catch (Exception e) {
 			throw (e);
@@ -93,7 +92,6 @@ public class ExcelUtils {
 			}
 			return i;
 		} catch (Exception e) {
-//			LogUtil.error(e.getMessage());
 			//System.out.println("Class ExcelUtil | Method getRowContains | Exception desc : "
 			//		+ e.getMessage());
 			throw (e);
@@ -106,7 +104,6 @@ public class ExcelUtils {
 			//System.out.println("Total number of Row used return as < " + RowCount + " >.");
 			return RowCount;
 		} catch (Exception e) {
-//			LogUtil.error(e.getMessage());
 			throw (e);
 		}
 
@@ -135,29 +132,27 @@ public class ExcelUtils {
 			}
 		}
 		catch (FileNotFoundException e) {
-//			LogUtil.error("Could not read the Excel sheet");
-			//System.out.println("Could not read the Excel sheet");
+			System.out.println("Could not read the Excel sheet");
 			e.printStackTrace();
 		}
 		catch (IOException e) {
-//			LogUtil.error("Could not read the Excel sheet");
-			//System.out.println("Could not read the Excel sheet");
+			System.out.println("Could not read the Excel sheet");
 			e.printStackTrace();
 		}
 		return (tabArray);
 	}
-	public Object[][] getTableByRow(int column)
+	public Object[][] getDataByRow(int row, int colunm)
 			throws Exception {
 
-		String[][] tabArray = null;
+		Object[][] tabArray = null;
 
 		try {
-			int startRow = 1;
+			int startRow = row;
 			int startCol = 0;
 			int ci, cj;
-			int totalRows = ExcelWSheet.getLastRowNum();
+			int totalRows = row;
 			// you can write a function as well to get Column count
-			int totalCols = column;
+			int totalCols = colunm;
 			tabArray = new String[totalRows][totalCols];
 			ci = 0;
 			for (int i = startRow; i <= totalRows; i++, ci++) {
@@ -169,13 +164,11 @@ public class ExcelUtils {
 			}
 		}
 		catch (FileNotFoundException e) {
-//			LogUtil.error("Could not read the Excel sheet");
-			//System.out.println("Could not read the Excel sheet");
+			System.out.println("Could not read the Excel sheet");
 			e.printStackTrace();
 		}
 		catch (IOException e) {
-//			LogUtil.error("Could not read the Excel sheet");
-			//System.out.println("Could not read the Excel sheet");
+			System.out.println("Could not read the Excel sheet");
 			e.printStackTrace();
 		}
 		return (tabArray);

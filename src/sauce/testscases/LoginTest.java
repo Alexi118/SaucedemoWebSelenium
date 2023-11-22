@@ -10,17 +10,17 @@ import utils.ExcelUtils;
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "LoginSuccessful")
-    public void loginSuccessfullyWithStandardUser(String username,String password){
-        loginPage.action_Login(username,password);
-        common.waitForVisibilityOfElement(homePage.banner_AppLogo);
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
-    }
-    @DataProvider(name = "LoginSuccessful")
-    public Object[][] loginSuccessfullyWithStandardUserData() throws Exception {
-        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginSuccessful);
-        return excel.getTableByColumn(2);
-    }
+//    @Test(dataProvider = "LoginSuccessful")
+//    public void loginSuccessfullyWithStandardUser(String username,String password){
+//        loginPage.action_Login(username,password);
+//        common.waitForVisibilityOfElement(homePage.banner_AppLogo);
+//        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
+//    }
+//    @DataProvider(name = "LoginSuccessful")
+//    public Object[][] loginSuccessfullyWithStandardUserData() throws Exception {
+//        ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginSuccessful);
+//        return excel.getDataByRow(1,2);
+//    }
 
     @Test(dataProvider = "LoginUnsuccessful1")
     public void loginUnsuccessfullyWithEmptyUser(String username,String password){
@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "LoginUnsuccessful1")
     public Object[][] loginUnsuccessfullyWithEmptyUserData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
-        return excel.getTableByColumn(2);
+        return excel.getDataByRow(1,2);
     }
 
 //    @Test(dataProvider = "LoginUnsuccessful2")

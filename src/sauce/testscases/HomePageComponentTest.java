@@ -38,8 +38,23 @@ public class HomePageComponentTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
     }
     @Test
-    public void homePageFilterSuccessfully(){
+    public void homePageFilterFromAtoZSuccessfully(){
+        loginPage.action_LoginWithCorrectUser();
+        common.action_select_dropdown("az", homePage.filter_box);
+    }
+    @Test
+    public void homePageFilterFromZtoASuccessfully(){
+        loginPage.action_LoginWithCorrectUser();
+        common.action_select_dropdown("za", homePage.filter_box);
+    }
+    @Test
+    public void homePageFilterFromLowToHighSuccessfully(){
         loginPage.action_LoginWithCorrectUser();
         common.action_select_dropdown("lohi", homePage.filter_box);
+    }
+    @Test
+    public void homePageFilterFromHighToLowSuccessfully(){
+        loginPage.action_LoginWithCorrectUser();
+        common.action_select_dropdown("hilo", homePage.filter_box);
     }
 }
