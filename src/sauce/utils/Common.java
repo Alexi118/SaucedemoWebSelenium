@@ -23,7 +23,7 @@ public class Common extends BasePage{
         WebDriverWait normalWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Normal));
         WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Long));
 
-        //Display&visible conditions
+        //Display&visible assert
         public boolean isDisplayed(WebElement element) {
                 try {
                         return element.isDisplayed();
@@ -84,7 +84,7 @@ public class Common extends BasePage{
                         List<String> browserTabs = new ArrayList<String>(driver.getWindowHandles());
                         driver.switchTo().window(browserTabs.get(1));
                 }catch(NoSuchFrameException e){
-                        System.out.println("WebDriver couldn’t find the new window to switch!");
+                        System.out.println("WebDriver couldn’t find the Window to switch!");
                 }
         }
         public void action_switchBackToBaseURL_Tab(){
@@ -93,7 +93,7 @@ public class Common extends BasePage{
                         driver.close();
                         driver.switchTo().window(browserTabs.get(0));
                 }catch(NoSuchFrameException e){
-                        System.out.println("WebDriver couldn’t find the new window to switch!");
+                        System.out.println("WebDriver couldn’t find the Window to switch!");
                 }
         }
 }
