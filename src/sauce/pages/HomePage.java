@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class HomePage extends BasePage {
     public HomePage(WebDriver driver){
             super(driver);
@@ -17,6 +19,8 @@ public class HomePage extends BasePage {
     public WebElement banner_AppLogo;
     @FindBy(css =".product_sort_container")
     public WebElement filter_box;
+    @FindBy(css =".active_option")
+    public WebElement active_option_filter_box;
     @FindBy(id = "inventory_sidebar_link")
     public WebElement all_items_Btn;
     @FindBy(id = "about_sidebar_link")
@@ -35,7 +39,10 @@ public class HomePage extends BasePage {
     public WebElement addRemove3rdItemOnHomepage_Btn;
     @FindBy(css = ".inventory_item:nth-child(4) button")
     public WebElement addRemove4thItemOnHomepage_Btn;
-
+    @FindBy(css = ".inventory_item_name")
+    public List<WebElement> allInventoryItemsNames;
+    @FindBy(css = ".inventory_item_price")
+    public List<WebElement> priceForEachInventoryItems;
     //cart
     @FindBy(css = ".shopping_cart_badge")
     public WebElement cartBadgeCount;

@@ -4,16 +4,15 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 import pages.BasePage;
-import utils.Constants;
 
 public class Common extends BasePage{
         public Common(WebDriver driver){
@@ -61,6 +60,34 @@ public class Common extends BasePage{
                 }catch (NoSuchElementException e){
                         System.out.println("All elements are not visible!" + webElement);
                 }
+        }
+
+        //List Array handle
+        public List<String> getListOfWebElementsToString(List<WebElement> list){
+                        List<String> textList = new ArrayList<>();
+                        for (WebElement element : list){
+                                //Remove $ Symbol if String contain money currency
+                                if(element.getText().contains("$")){
+                                        String newStr = element.getText().replace("$","");
+                                        textList.add(newStr);
+                                }
+                                else
+                                        textList.add(element.getText());
+                        }
+                        return textList;
+        }
+        public List<String> sortListASC(List<WebElement> list){
+                List<String> textListAfterSortedASC = getListOfWebElementsToString(list);
+                Collections.sort(textListAfterSortedASC);
+                System.out.println(textListAfterSortedASC);
+                return textListAfterSortedASC;
+        }
+
+        public List<String> sortListDESC(List<WebElement> list){
+                List<String> textListAfterSortedDESC = getListOfWebElementsToString(list);
+                Collections.sort(textListAfterSortedDESC, Collections.reverseOrder());
+                System.out.println(textListAfterSortedDESC);
+                return textListAfterSortedDESC;
         }
 
         //Interact action on Web
