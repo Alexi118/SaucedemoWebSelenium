@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 import pages.BasePage;
 
@@ -76,18 +77,22 @@ public class Common extends BasePage{
                         }
                         return textList;
         }
-        public List<String> sortListASC(List<WebElement> list){
+        public List<String> sortListTextASC(List<WebElement> list){
                 List<String> textListAfterSortedASC = getListOfWebElementsToString(list);
                 Collections.sort(textListAfterSortedASC);
-                System.out.println(textListAfterSortedASC);
                 return textListAfterSortedASC;
         }
-
-        public List<String> sortListDESC(List<WebElement> list){
+        public List<String> sortListTextDESC(List<WebElement> list){
                 List<String> textListAfterSortedDESC = getListOfWebElementsToString(list);
                 Collections.sort(textListAfterSortedDESC, Collections.reverseOrder());
-                System.out.println(textListAfterSortedDESC);
                 return textListAfterSortedDESC;
+        }
+        public List<Integer> sortListNumberASC(List<WebElement> list){
+                List<Integer> numberListAfterSortedASC = getListOfWebElementsToString(list).stream().map(Integer::valueOf).collect(Collectors.toList());
+//                Collections.sort(numberListAfterSortedASC);
+                System.out.println(numberListAfterSortedASC);
+//                List <String> convertedString = numberListAfterSortedASC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
+                return numberListAfterSortedASC;
         }
 
         //Interact action on Web

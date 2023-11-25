@@ -42,28 +42,28 @@ public class HomePageComponentTest extends BaseTest{
 //        loginPage.action_LoginWithCorrectUser();
 //        common.action_select_dropdown("az", homePage.filter_box);
 //        Assert.assertEquals(homePage.active_option_filter_box.getText(),"Name (A to Z)");
-//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.allInventoryItemsNames),common.sortListASC(homePage.allInventoryItemsNames));
+//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.allInventoryItemsNames),common.sortListTextASC(homePage.allInventoryItemsNames));
 //    }
 //    @Test
 //    public void homePageFilterFromZtoASuccessfully(){
 //        loginPage.action_LoginWithCorrectUser();
 //        common.action_select_dropdown("za", homePage.filter_box);
 //        Assert.assertEquals(homePage.active_option_filter_box.getText(),"Name (Z to A)");
-//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.allInventoryItemsNames),common.sortListDESC(homePage.allInventoryItemsNames));
+//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.allInventoryItemsNames),common.sortListTextDESC(homePage.allInventoryItemsNames));
 //    }
     @Test
     public void homePageFilterFromLowToHighSuccessfully(){
         loginPage.action_LoginWithCorrectUser();
         common.action_select_dropdown("lohi", homePage.filter_box);
         Assert.assertEquals(homePage.active_option_filter_box.getText(),"Price (low to high)");
-        Assert.assertEquals(common.getListOfWebElementsToString(homePage.priceForEachInventoryItems), common.sortListDESC(homePage.priceForEachInventoryItems));
+        Assert.assertEquals(common.getListOfWebElementsToString(homePage.priceForEachInventoryItems), common.sortListNumberASC(homePage.priceForEachInventoryItems));
     }
 //    @Test
 //    public void homePageFilterFromHighToLowSuccessfully(){
 //        loginPage.action_LoginWithCorrectUser();
 //        common.action_select_dropdown("hilo", homePage.filter_box);
 //        Assert.assertEquals(homePage.active_option_filter_box.getText(),"Price (high to low)");
-//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.priceForEachInventoryItems), common.sortListASC(homePage.priceForEachInventoryItems));
+//        Assert.assertEquals(common.getListOfWebElementsToString(homePage.priceForEachInventoryItems), common.sortListTextDESC(homePage.priceForEachInventoryItems));
 //    }
 //    @Test
 //    public void addAndRemoveItemFromShoppingCart(){
