@@ -147,20 +147,15 @@ public class ExcelUtils {
 		Object[][] tabArray = null;
 
 		try {
-			int startRow = row;
 			int startCol = 0;
-			int ci, cj;
-			int totalRows = row;
+			int cj;
 			// you can write a function as well to get Column count
 			int totalCols = colunm;
-			tabArray = new String[startRow][totalCols];
-			ci = 0;
-			for (int i = startRow; i <= totalRows; i++, ci++) {
-				cj = 0;
-				for (int j = startCol; j < totalCols; j++, cj++) {
-					tabArray[ci][cj] = getCellData(i, j);
-					System.out.println(tabArray[ci][cj]);
-				}
+			tabArray = new String[row][totalCols];
+			cj = 0;
+			for (int j = startCol; j < totalCols; j++, cj++) {
+					tabArray[row][cj] = getCellData(row, j);
+					System.out.println(tabArray[row][cj]);
 			}
 		}
 		catch (FileNotFoundException e) {

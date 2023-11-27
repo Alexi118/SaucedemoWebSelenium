@@ -71,6 +71,6 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "LoginUnsuccessful4")
     public Object[][] loginUnsuccessfullyWithWrongPasswordData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
-        return excel.getDataByRow(4,2);
+        return excel.getDataByRow(3,2);
     }
 }

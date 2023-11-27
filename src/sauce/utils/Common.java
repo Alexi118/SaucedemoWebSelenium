@@ -87,12 +87,18 @@ public class Common extends BasePage{
                 Collections.sort(textListAfterSortedDESC, Collections.reverseOrder());
                 return textListAfterSortedDESC;
         }
-        public List<Integer> sortListNumberASC(List<WebElement> list){
-                List<Integer> numberListAfterSortedASC = getListOfWebElementsToString(list).stream().map(Integer::valueOf).collect(Collectors.toList());
-//                Collections.sort(numberListAfterSortedASC);
-                System.out.println(numberListAfterSortedASC);
-//                List <String> convertedString = numberListAfterSortedASC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
-                return numberListAfterSortedASC;
+        public List<String> sortListNumberASC(List<WebElement> list){
+                List<Float> numberListAfterSortedASC = getListOfWebElementsToString(list).stream().map(Float::parseFloat).collect(Collectors.toList());
+                Collections.sort(numberListAfterSortedASC);
+                List <String> convertedString = numberListAfterSortedASC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
+                return convertedString;
+        }
+
+        public List<String> sortListNumberDESC(List<WebElement> list){
+                List<Float> numberListAfterSortedDESC = getListOfWebElementsToString(list).stream().map(Float::parseFloat).collect(Collectors.toList());
+                Collections.sort(numberListAfterSortedDESC, Collections.reverseOrder());
+                List <String> convertedString = numberListAfterSortedDESC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
+                return convertedString;
         }
 
         //Interact action on Web
