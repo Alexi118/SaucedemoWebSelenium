@@ -141,22 +141,21 @@ public class ExcelUtils {
 		}
 		return (tabArray);
 	}
-	public Object[][] getDataByRow(int row, int colunm)
+	public Object[][] getDataByRow(int row, int column)
 			throws Exception {
 
-		Object[][] tabArray = null;
+		String[][] tabArray = null;
 
 		try {
 			int startCol = 0;
-			int cj;
 			// you can write a function as well to get Column count
-			int totalCols = colunm;
+			int totalCols = column;
 			tabArray = new String[row][totalCols];
-			cj = 0;
-			for (int j = startCol; j < totalCols; j++, cj++) {
+			int cj = 0;
+				for (int j = startCol; j < totalCols; j++, cj++) {
 					tabArray[row][cj] = getCellData(row, j);
 					System.out.println(tabArray[row][cj]);
-			}
+				}
 		}
 		catch (FileNotFoundException e) {
 			System.out.println("Could not read the Excel sheet");
