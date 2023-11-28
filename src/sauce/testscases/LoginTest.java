@@ -69,7 +69,7 @@ public class LoginTest extends BaseTest {
         common.action_clickOn_element(loginPage.btn_cancel_error);
     }
     @DataProvider(name = "LoginUnsuccessful4")
-    public Object[][] loginUnsuccessfullyWithWrongPasswordData() throws Exception {
+    public Object[] loginUnsuccessfullyWithWrongPasswordData() throws Exception {
         ExcelUtils excel = new ExcelUtils(Constants.DataPath_Login, Constants.DataSheet_LoginUnSuccessful);
         return excel.getDataByRow(3,2);
     }
