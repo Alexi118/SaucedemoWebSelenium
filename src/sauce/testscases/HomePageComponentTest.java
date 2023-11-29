@@ -66,7 +66,7 @@ public class HomePageComponentTest extends BaseTest{
         Assert.assertEquals(common.getListOfWebElementsToString(homePage.priceForEachInventoryItems), common.sortListNumberDESC(homePage.priceForEachInventoryItems));
     }
     @Test
-    public void addAndRemoveItemFromShoppingCart(){
+    public void addAndRemoveItemFromShoppingCartOnHomePage(){
         loginPage.action_LoginWithCorrectUser();
         common.action_clickOn_element(homePage.addRemove1stItemOnHomepage_Btn);
         Assert.assertEquals(homePage.cartBadgeCount.getText(),"1");

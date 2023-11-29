@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage {
@@ -34,6 +33,11 @@ public class HomePage extends BasePage {
     //inventory
     @FindBy(css = ".inventory_item:nth-child(1) button")
     public WebElement addRemove1stItemOnHomepage_Btn;
+    @FindBy(css = ".inventory_item:nth-child(1) .inventory_item_img a")
+    public WebElement firstItem_Img;
+    @FindBy(css = ".inventory_item:nth-child(1) .inventory_item_name")
+    public WebElement firstItem_Name;
+
     @FindBy(css = ".inventory_item:nth-child(2) button")
     public WebElement addRemove2ndItemOnHomepage_Btn;
     @FindBy(css = ".inventory_item:nth-child(3) button")

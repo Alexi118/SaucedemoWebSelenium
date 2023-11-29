@@ -12,6 +12,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import pages.HomePage;
+import pages.InventoryItemPage;
 import pages.LoginPage;
 
 import java.io.File;
@@ -28,6 +29,7 @@ public class BaseTest {
     protected Common common;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected InventoryItemPage inventoryItemPage;
 
     @Parameters({"browserName"})
     @BeforeMethod
@@ -53,6 +55,7 @@ public class BaseTest {
 
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
+        inventoryItemPage = new InventoryItemPage(driver);
         common = new Common(driver);
     }
 

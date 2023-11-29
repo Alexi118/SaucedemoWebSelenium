@@ -1,9 +1,6 @@
 package utils;
 
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.NoSuchFrameException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -113,7 +110,7 @@ public class Common extends BasePage{
         public void action_clickOn_element(WebElement webElement){
                 try {
                         webElement.click();
-                }catch (NoSuchElementException e) {
+                }catch (NoSuchElementException | ElementNotInteractableException e) {
                         System.out.println("WebDriver couldn’t locate the element to click on" + webElement);
                 }
         }
