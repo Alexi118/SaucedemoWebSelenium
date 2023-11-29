@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import utils.Constants;
-import utils.Common;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){

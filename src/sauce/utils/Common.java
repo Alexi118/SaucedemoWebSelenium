@@ -36,6 +36,10 @@ public class Common extends BasePage{
                         return false;
                 }
         }
+        public String getNumberInString(String string){
+                String getNumber = string.replaceAll("[^\\d.]", "");
+                return getNumber;
+        }
 
         //Wait Conditions
         public void waitForVisibilityOfElement(WebElement webElement){
@@ -74,6 +78,14 @@ public class Common extends BasePage{
                         }
                         return textList;
         }
+        public String sumOfNumberInList(List<WebElement> list){
+                getListOfWebElementsToString(list);
+                List<Double> convertedDoubleList = getListOfWebElementsToString(list).stream().map(Double::parseDouble).collect(Collectors.toList());
+                Double sum = convertedDoubleList.stream().mapToDouble(Double::doubleValue).sum();
+                String convertedSum = Double.toString(sum);
+                System.out.println(convertedSum);
+                return convertedSum;
+        }
         public List<String> sortListTextASC(List<WebElement> list){
                 List<String> textListAfterSortedASC = getListOfWebElementsToString(list);
                 Collections.sort(textListAfterSortedASC);
@@ -85,14 +97,14 @@ public class Common extends BasePage{
                 return textListAfterSortedDESC;
         }
         public List<String> sortListNumberASC(List<WebElement> list){
-                List<Float> numberListAfterSortedASC = getListOfWebElementsToString(list).stream().map(Float::parseFloat).collect(Collectors.toList());
+                List<Double> numberListAfterSortedASC = getListOfWebElementsToString(list).stream().map(Double::parseDouble).collect(Collectors.toList());
                 Collections.sort(numberListAfterSortedASC);
                 List <String> convertedString = numberListAfterSortedASC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
                 return convertedString;
         }
 
         public List<String> sortListNumberDESC(List<WebElement> list){
-                List<Float> numberListAfterSortedDESC = getListOfWebElementsToString(list).stream().map(Float::parseFloat).collect(Collectors.toList());
+                List<Double> numberListAfterSortedDESC = getListOfWebElementsToString(list).stream().map(Double::parseDouble).collect(Collectors.toList());
                 Collections.sort(numberListAfterSortedDESC, Collections.reverseOrder());
                 List <String> convertedString = numberListAfterSortedDESC.stream().map(x->String.valueOf(x)).collect(Collectors.toList());
                 return convertedString;

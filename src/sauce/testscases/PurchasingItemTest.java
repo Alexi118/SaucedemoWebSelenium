@@ -16,5 +16,8 @@ public class PurchasingItemTest extends BaseTest{
         common.action_clickOn_element(cartPage.checkOut_Btn);
         checkOutPage.action_fillInCorrectICheckOutInfo();
         common.action_clickOn_element(checkOutPage.continue_Btn);
+        Assert.assertEquals(common.getNumberInString(checkOutSecondPage.itemTotalbeforeTax.getText()),common.sumOfNumberInList(checkOutSecondPage.allItemsPrice));
+        common.sumOfNumberInList(checkOutSecondPage.allItemsPrice);
+        common.action_clickOn_element(checkOutSecondPage.finish_Btn);
     }
 }
