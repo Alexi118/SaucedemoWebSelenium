@@ -4,15 +4,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class CartPage extends BasePage{
     public CartPage(WebDriver driver){
         super(driver);
     }
-    @FindBy(className = "shopping_cart_link")
-    public WebElement icon_Cart;
-    @FindBy(className = "add-to-cart-sauce-labs-backpack")
-    public WebElement btn_addToCart_Backpack;
-
-    @FindBy(className = "add-to-cart-sauce-labs-bike-light")
-    public WebElement btn_addToCart_BikeLight;
+    @FindBy(css = ".shopping_cart_link")
+    public WebElement cartIcon_Link;
+    @FindBy(css = ".shopping_cart_badge")
+    public WebElement cartBadgeCount;
+    @FindBy(css = ".inventory_item_name")
+    public List<WebElement> allIventoryItemsName;
+    @FindBy(css = "#continue-shopping")
+    public WebElement continueShopping_Btn;
+    @FindBy(css = "#checkout")
+    public WebElement checkOut_Btn;
 }

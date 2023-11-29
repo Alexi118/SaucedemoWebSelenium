@@ -48,9 +48,6 @@ public class HomePage extends BasePage {
     public List<WebElement> allInventoryItemsNames;
     @FindBy(css = ".inventory_item_price")
     public List<WebElement> priceForEachInventoryItems;
-    //cart
-    @FindBy(css = ".shopping_cart_badge")
-    public WebElement cartBadgeCount;
 
     //footer
     @FindBy(css = ".social_twitter")

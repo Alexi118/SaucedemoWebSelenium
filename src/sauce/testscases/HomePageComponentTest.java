@@ -69,19 +69,19 @@ public class HomePageComponentTest extends BaseTest{
     public void addAndRemoveItemFromShoppingCartOnHomePage(){
         loginPage.action_LoginWithCorrectUser();
         common.action_clickOn_element(homePage.addRemove1stItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"1");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"1");
         common.action_clickOn_element(homePage.addRemove2ndItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"2");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"2");
         common.action_clickOn_element(homePage.addRemove3rdItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"3");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"3");
         common.action_clickOn_element(homePage.addRemove2ndItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"2");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"2");
         common.action_clickOn_element(homePage.addRemove3rdItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"1");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"1");
         common.action_clickOn_element(homePage.addRemove1stItemOnHomepage_Btn);
-        Assert.assertEquals(common.isDisplayed(homePage.cartBadgeCount), false);
+        Assert.assertEquals(common.isDisplayed(cartPage.cartBadgeCount), false);
         common.action_clickOn_element(homePage.addRemove4thItemOnHomepage_Btn);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"1");
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"1");
     }
     @Test
     public void footerRedirectCorrectly(){

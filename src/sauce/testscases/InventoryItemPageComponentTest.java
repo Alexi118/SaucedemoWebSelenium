@@ -22,9 +22,16 @@ public class InventoryItemPageComponentTest extends BaseTest {
     public void addAndRemoveItemFromShoppingCartOnInventoryItemPage() {
         loginPage.action_LoginWithCorrectUser();
         common.action_clickOn_element(homePage.firstItem_Name);
-        common.action_clickOn_element(inventoryItemPage.itemAdd_button);
-        Assert.assertEquals(homePage.cartBadgeCount.getText(),"1");
-        common.action_clickOn_element(inventoryItemPage.itemRemove_button);
-        Assert.assertEquals(common.isDisplayed(homePage.cartBadgeCount), false);
+        common.action_clickOn_element(inventoryItemPage.itemAdd_Btn);
+        Assert.assertEquals(cartPage.cartBadgeCount.getText(),"1");
+        common.action_clickOn_element(inventoryItemPage.itemRemove_Btn);
+        Assert.assertEquals(common.isDisplayed(cartPage.cartBadgeCount), false);
+    }
+    @Test
+    public void redirectToHomePage_ByclickOnBackToProducts(){
+        loginPage.action_LoginWithCorrectUser();
+        common.action_clickOn_element(homePage.firstItem_Name);
+        common.action_clickOn_element(inventoryItemPage.backToProducts_Btn);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
     }
 }

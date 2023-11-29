@@ -11,9 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import pages.HomePage;
-import pages.InventoryItemPage;
-import pages.LoginPage;
+import pages.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +28,9 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected InventoryItemPage inventoryItemPage;
+    protected CartPage cartPage;
+    protected CheckOutPage checkOutPage;
+    protected CheckOutSecondPage checkOutSecondPage;
 
     @Parameters({"browserName"})
     @BeforeMethod
@@ -53,10 +54,13 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get(Constants.baseURL);
 
+        common = new Common(driver);
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         inventoryItemPage = new InventoryItemPage(driver);
-        common = new Common(driver);
+        cartPage = new CartPage(driver);
+        checkOutPage = new CheckOutPage(driver);
+        checkOutSecondPage = new CheckOutSecondPage(driver);
     }
 
     @AfterMethod
