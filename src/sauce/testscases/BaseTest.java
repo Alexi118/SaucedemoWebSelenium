@@ -36,16 +36,16 @@ public class BaseTest {
     @Parameters({"browserName"})
     @BeforeMethod
     public void setUp(String browserName) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        WebDriverManager.firefoxdriver().setup();
 
         if (browserName.equalsIgnoreCase("ff")) {
+            WebDriverManager.firefoxdriver().setup();
             //(Add Options to run with Chrome (headless))
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
             firefoxOptions.addArguments("window-size=1920,1080");
             driver = new FirefoxDriver(firefoxOptions);
         } else {
+            WebDriverManager.chromedriver().setup();
             //(Add Options to run with Chrome (headless))
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
