@@ -43,11 +43,13 @@ public class BaseTest {
             //(Add Options to run with Chrome (headless))
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("window-size=1920,1080");
             driver = new FirefoxDriver(firefoxOptions);
         } else {
             //(Add Options to run with Chrome (headless))
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("window-size=1920,1080");
             driver = new ChromeDriver(chromeOptions);
         }
 

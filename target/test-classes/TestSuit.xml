@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite parallel="tests" thread-count="5" name="Suit" >
+<suite parallel="tests" thread-count="21" name="Suit" >
 <!-- (Test run with Chrome) -->
-<!--    <test name="TestChrome">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testscases.LoginTest" />-->
-<!--            <class name="testscases.HomePageComponentTest" />-->
-<!--            <class name="testscases.InventoryItemPageComponentTest" />-->
-<!--            <class name="testscases.PurchasingItemTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
-<!-- (Test run with firefox) -->
+    <test name="TestChrome">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testscases.LoginTest" />
+            <class name="testscases.HomePageComponentTest" />
+            <class name="testscases.InventoryItemPageComponentTest" />
+            <class name="testscases.PurchasingItemTest" />
+        </classes>
+    </test>
+ (Test run with firefox)
     <test name="TestFirefox">
         <parameter name="browserName" value="ff"/>
         <classes>
