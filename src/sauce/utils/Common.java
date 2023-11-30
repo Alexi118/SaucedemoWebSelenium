@@ -64,6 +64,13 @@ public class Common extends BasePage{
                         System.out.println("All elements are not visible!" + list);
                 }
         }
+        public void waitForLinkIsLoad(String link){
+                try {
+                        normalWait.until(ExpectedConditions.numberOfWindowsToBe(2));
+                }catch (NoSuchFrameException e){
+                        System.out.println("The window is not visible!" + link);
+                }
+        }
 
         //List Array handle
         public List<String> getListOfWebElementsToString(List<WebElement> list){
@@ -129,6 +136,7 @@ public class Common extends BasePage{
         }
         public void action_switchToAnother_Tab(){
                 try{
+                        normalWait.until(ExpectedConditions.numberOfWindowsToBe(2));
                         List<String> browserTabs = new ArrayList<String>(driver.getWindowHandles());
                         driver.switchTo().window(browserTabs.get(1));
                 }catch(NoSuchFrameException e){

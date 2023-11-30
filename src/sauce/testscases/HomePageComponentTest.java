@@ -84,20 +84,23 @@ public class HomePageComponentTest extends BaseTest{
         Assert.assertEquals(cartPage.cartBadgeCount.getText(),"1");
     }
     @Test
-    public void footerRedirectCorrectly(){
+    public void footerRedirectCorrectly() throws InterruptedException {
         loginPage.action_LoginWithCorrectUser();
         Assert.assertEquals(homePage.footer_text.getText(),"© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");
         common.action_clickOn_element(homePage.twitter_icon);
+        Thread.sleep(2000);
         common.action_switchToAnother_Tab();
         Assert.assertEquals(driver.getCurrentUrl(),"https://twitter.com/saucelabs");
         common.action_switchBackToBaseURL_Tab();
         common.action_clickOn_element(homePage.facebook_icon);
+        Thread.sleep(2000);
         common.action_switchToAnother_Tab();
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.facebook.com/saucelabs");
         common.action_switchBackToBaseURL_Tab();
         common.action_clickOn_element(homePage.linkedin_icon);
+        Thread.sleep(2000);
         common.action_switchToAnother_Tab();
-        //Assert.assertEquals(driver.getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
         common.action_switchBackToBaseURL_Tab();
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
     }
