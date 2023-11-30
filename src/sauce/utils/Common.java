@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 import pages.BasePage;
+import utils.ExcelUtils;
 
 public class Common extends BasePage{
         public Common(WebDriver driver){
@@ -56,11 +57,11 @@ public class Common extends BasePage{
                         System.out.println("The element is not clickable!" + webElement);
                 }
         }
-        public void waitForVisibilityOfAllElements(WebElement webElement){
+        public void waitForVisibilityOfAllElements(List<WebElement> list){
                 try{
-                        normalWait.until(ExpectedConditions.visibilityOfAllElements(webElement));
+                        normalWait.until(ExpectedConditions.visibilityOfAllElements(list));
                 }catch (NoSuchElementException e){
-                        System.out.println("All elements are not visible!" + webElement);
+                        System.out.println("All elements are not visible!" + list);
                 }
         }
 
@@ -143,4 +144,7 @@ public class Common extends BasePage{
                         System.out.println("WebDriver couldn’t find the Window to switch!");
                 }
         }
+
+        //Excel handle
+
 }

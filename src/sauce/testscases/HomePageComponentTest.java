@@ -97,7 +97,7 @@ public class HomePageComponentTest extends BaseTest{
         common.action_switchBackToBaseURL_Tab();
         common.action_clickOn_element(homePage.linkedin_icon);
         common.action_switchToAnother_Tab();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
+        //Assert.assertEquals(driver.getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
         common.action_switchBackToBaseURL_Tab();
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
     }

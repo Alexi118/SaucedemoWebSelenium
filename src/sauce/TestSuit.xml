@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="tests" thread-count="5" name="Suit" >
-    <test name="TestChrome">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
+<!-- (Test run with Chrome) -->
+<!--    <test name="TestChrome">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
 <!--            <class name="testscases.LoginTest" />-->
 <!--            <class name="testscases.HomePageComponentTest" />-->
 <!--            <class name="testscases.InventoryItemPageComponentTest" />-->
+<!--            <class name="testscases.PurchasingItemTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+<!-- (Test run with firefox) -->
+    <test name="TestFirefox">
+        <parameter name="browserName" value="ff"/>
+        <classes>
+            <class name="testscases.LoginTest" />
+            <class name="testscases.HomePageComponentTest" />
+            <class name="testscases.InventoryItemPageComponentTest" />
             <class name="testscases.PurchasingItemTest" />
         </classes>
     </test>
-<!-- (Add test run with firefox) -->
-<!--<test name="TestFirefox">-->
-<!--        <parameter name="browserName" value="ff"/>-->
-<!--        <classes>-->
-<!--&lt;!&ndash;            <class name="testscases.LoginTest" />&ndash;&gt;-->
-<!--            <class name="testscases.HomePageComponentTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
-</suite> <!-- Suite -->
+</suite>

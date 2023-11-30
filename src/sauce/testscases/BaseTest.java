@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -39,16 +40,15 @@ public class BaseTest {
         WebDriverManager.firefoxdriver().setup();
 
         if (browserName.equalsIgnoreCase("ff")) {
-            driver = new FirefoxDriver();
+            //(Add Options to run with Chrome (headless))
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.addArguments("--headless");
+            driver = new FirefoxDriver(firefoxOptions);
         } else {
-            /* (Add Options to run with Chrome (headless))
+            //(Add Options to run with Chrome (headless))
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--headless");
-            chromeOptions.addArguments("disable-gpu");
             driver = new ChromeDriver(chromeOptions);
-            */
-            driver = new ChromeDriver();
         }
 
         driver.manage().window().maximize();
