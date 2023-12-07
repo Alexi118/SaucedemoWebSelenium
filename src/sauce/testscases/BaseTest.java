@@ -48,7 +48,7 @@ public class BaseTest {
             WebDriverManager.chromedriver().setup();
             //(Add Options to run with Chrome (headless))
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--headless");
+//            chromeOptions.addArguments("--headless");
             chromeOptions.addArguments("window-size=1920,1080");
             driver = new ChromeDriver(chromeOptions);
         }
@@ -74,6 +74,6 @@ public class BaseTest {
             File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(srcFile, new File("src\\screenshot\\screenshot-" + timeStamp + ".png"));
         }
-        driver.quit();
+        //driver.quit();
     }
 }

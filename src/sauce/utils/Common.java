@@ -9,17 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 import java.util.stream.Collectors;
+import org.openqa.selenium.interactions.Actions;
 
 import pages.BasePage;
-import utils.ExcelUtils;
 
 public class Common extends BasePage{
+
         public Common(WebDriver driver){
                 super(driver);
         }
         WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Short));
         WebDriverWait normalWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Normal));
         WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(Constants.Long));
+        Actions act = new Actions(driver);
+        public void doubleClick(WebElement element){
+                //Actions act = new Actions(driver);
+                act.doubleClick(element);
+                act.build().perform();
+        }
 
         //Display&visible assert
         public boolean isDisplayed(WebElement element) {

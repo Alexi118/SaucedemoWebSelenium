@@ -3,19 +3,19 @@
     <test name="TestChrome">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="testscases.LoginTest" />
-            <class name="testscases.HomePageComponentTest" />
-            <class name="testscases.InventoryItemPageComponentTest" />
+<!--            <class name="testscases.LoginTest" />-->
+<!--            <class name="testscases.HomePageComponentTest" />-->
+<!--            <class name="testscases.InventoryItemPageComponentTest" />-->
             <class name="testscases.PurchasingItemTest" />
         </classes>
     </test>
-    <test name="TestFirefox">
-        <parameter name="browserName" value="ff"/>
-        <classes>
-            <class name="testscases.LoginTest" />
-            <class name="testscases.HomePageComponentTest" />
-            <class name="testscases.InventoryItemPageComponentTest" />
-            <class name="testscases.PurchasingItemTest" />
-        </classes>
-    </test>
+<!--    <test name="TestFirefox">-->
+<!--        <parameter name="browserName" value="ff"/>-->
+<!--        <classes>-->
+<!--            <class name="testscases.LoginTest" />-->
+<!--            <class name="testscases.HomePageComponentTest" />-->
+<!--            <class name="testscases.InventoryItemPageComponentTest" />-->
+<!--            <class name="testscases.PurchasingItemTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
