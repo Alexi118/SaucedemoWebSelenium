@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PurchasingItemTest extends BaseTest{
-    @Test
+    @Test(priority = 0)
     public void purchasingItemE2E_Successfully(){
         loginPage.action_LoginWithCorrectUser();
         common.action_clickOn_element(homePage.addRemove1stItemOnHomepage_Btn);
@@ -20,7 +20,7 @@ public class PurchasingItemTest extends BaseTest{
         common.sumOfNumberInList(checkOutSecondPage.allItemsPrice);
         common.action_clickOn_element(checkOutSecondPage.finish_Btn);
     }
-    @Test
+    @Test(priority = 0)
     public void testdoubleClick(){
         loginPage.action_LoginWithCorrectUser();
         common.action_clickOn_element(homePage.addRemove1stItemOnHomepage_Btn);
